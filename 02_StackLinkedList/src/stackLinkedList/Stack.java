@@ -1,8 +1,10 @@
 package stackLinkedList;
 
-public class Stack {
+import java.util.Iterator;
+
+public class Stack<Item> implements Iterable<Item> {
 	class Node {
-		String item;
+		Item item;
 		Node next;
 	}
 	private Node first;
@@ -13,7 +15,7 @@ public class Stack {
 		size = 0;
 	}
 	
-	public void push(String item) {
+	public void push(Item item) {
 		Node oldFirst = first;
 		first = new Node();
 		first.item = item;
@@ -21,7 +23,7 @@ public class Stack {
 		size++;
 	}
 	
-	public String pop() {
+	public Item pop() {
 		Node oldFirst = first;
 		first = first.next;
 		size--;
@@ -30,5 +32,31 @@ public class Stack {
 	
 	public int size() {
 		return size;
+	}
+
+	public Iterator<Item> iterator() {
+		return new ListIterator();
+	}
+	
+	private class ListIterator implements Iterator<Item> {
+		private Node current = first;
+		
+		@Override
+		public boolean hasNext() {
+			return current != null;
+		}
+
+		@Override
+		public Item next() {
+			Item item = current.item;
+			current = current.next;
+			return item;
+		}
+
+		@Override
+		public void remove() {
+			// TODO Auto-generated method stub
+			/* not supported */
+		}	
 	}
 }
