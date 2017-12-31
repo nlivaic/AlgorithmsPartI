@@ -11,7 +11,6 @@ public class Stack {
 		s[size++]= item;
 		if (size == s.length) {
 			resize(s.length*2);
-			System.out.println("Doubled at " + size);
 		}
 	}
 	
@@ -19,7 +18,6 @@ public class Stack {
 		size--;
 		if (size == s.length/4) {
 			resize(s.length/2);
-			System.out.println("Cut at " + size + ", array size: " + s.length);
 		}
 		return s[size];
 	}
