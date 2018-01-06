@@ -43,7 +43,6 @@ public class Stack<Item> implements Iterable<Item> {
 	}
 	
 	private class StackIterator implements Iterator<Item> {
-		private Item item;
 		private int index = 0;
 		
 		@Override
