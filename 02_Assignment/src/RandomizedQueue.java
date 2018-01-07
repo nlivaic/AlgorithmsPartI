@@ -8,6 +8,10 @@
  *  Partner Precept: None
  * 
  *  Description:  Write a generic data type for a randomized queue.
+ *  Solution:     Implemented as stack, but without a pop operation.
+ *                When deleting, a random index is nulled.
+ *                When iterating, a randomized set of indices is 
+ *                created each time and traversed.
  ******************************************************************************/
 import edu.princeton.cs.algs4.StdRandom;
 import java.util.Iterator;

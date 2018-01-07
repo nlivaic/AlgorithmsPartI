@@ -8,6 +8,8 @@
  *  Partner Precept: None
  * 
  *  Description:  Write a generic data type for a deque
+ *  Solution:     A double-linked list, allowing for insertion
+ *                and deletion from either end.
  ******************************************************************************/
 import java.util.Iterator;
 
